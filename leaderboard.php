@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Fifteen</title>
+        <title>Fifteen- Leaderboard</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles.css">
     </head>
-    <body>
+    <body class="bloom">
         <header>
-            <h1>Fifteen- Leaderboard</h1>
-            <button onclick="location.href='leaderboard.php';">Go to Game</button>
+            <h1>Leaderboard</h1>
+            <button onclick="location.href='index.php';">Go to Game</button>
         </header>
         <main>
         <!--this leaderboard should be replaced with one that loads dynamically-->

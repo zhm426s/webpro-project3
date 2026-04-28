@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles.css">
     </head>
-    <body>
+    <body class="bloom">
         <header>
             <h1>Fifteen</h1>
             <button onClick="location.href='leaderboard.php';">View Leaderboard</button>
@@ -17,7 +17,7 @@
                 <button type="submit">Enter Name</button>
             </form>
             <form id="mode-form"> <!--this value might have to be handled by javascript-->
-                <label for="mode">Name</label>
+                <label for="mode">Mode</label>
                 <select id="mode" name="mode">
                     <option value="bloom" selected>Bloom</option>
                     <option value="breeze">Breeze</option>
@@ -26,26 +26,28 @@
                 <button type="submit">Enter Name</button>
             </form>
             <button type="button">Start Game</button> <!--attach this to a script for beginning the game-->
-            <div id="game-board"> <!-- pieces may have to be loaded dynamically, pos-# classes are for where in the board they sit-->
-                <div class="board-piece pos-1 bloom" id="1">1</div>
-                <div class="board-piece pos-2 bloom" id="2">2</div>
-                <div class="board-piece pos-3 bloom" id="3">3</div>
-                <div class="board-piece pos-4 bloom" id="4">4</div>
-                <div class="board-piece pos-5 bloom" id="5">5</div>
-                <div class="board-piece pos-6 bloom" id="6">6</div>
-                <div class="board-piece pos-7 bloom" id="7">7</div>
-                <div class="board-piece pos-8 bloom" id="8">8</div>
-                <div class="board-piece pos-9 bloom" id="9">9</div>
-                <div class="board-piece pos-10 bloom" id="10">10</div>
-                <div class="board-piece pos-11 bloom" id="11">11</div>
-                <div class="board-piece pos-12 bloom" id="12">12</div>
-                <div class="board-piece pos-13 bloom" id="13">13</div>
-                <div class="board-piece pos-14 bloom" id="14">14</div>
-                <div class="board-piece pos-15 bloom" id="15">15</div>
+            <div id="board-center">
+                <div id="game-board"> <!-- pieces may have to be loaded dynamically, pos-# classes are for where in the board they sit-->
+                    <div class="board-piece pos-1 bloom" id="1"><p>1</p></div>
+                    <div class="board-piece pos-2 bloom" id="2"><p>2</p></div>
+                    <div class="board-piece pos-3 bloom" id="3"><p>3</p></div>
+                    <div class="board-piece pos-4 bloom" id="4"><p>4</p></div>
+                    <div class="board-piece pos-5 bloom" id="5"><p>5</p></div>
+                    <div class="board-piece pos-6 bloom" id="6"><p>6</p></div>
+                    <div class="board-piece pos-7 bloom" id="7"><p>7</p></div>
+                    <div class="board-piece pos-8 bloom" id="8"><p>8</p></div>
+                    <div class="board-piece pos-9 bloom" id="9"><p>9</p></div>
+                    <div class="board-piece pos-10 bloom" id="10"><p>10</p></div>
+                    <div class="board-piece pos-11 bloom" id="11"><p>11</p></div>
+                    <div class="board-piece pos-12 bloom" id="12"><p>12</p></div>
+                    <div class="board-piece pos-13 bloom" id="13"><p>13</p></div>
+                    <div class="board-piece pos-14 bloom" id="14"><p>14</p></div>
+                    <div class="board-piece pos-15 bloom" id="15"><p>15</p></div>
+                </div>
             </div>
             <div id="stats">
-                <div id="timer-div"><p id="timer"><!--put timer var in contents of #timer--></p></div>
-                <div id="moves-div"><p id="moves"><!--put moves var in contents of #moves--></p></div>
+                <div id="timer-div"><p><b>Time: </b></p><p id="timer">placeholder<!--put timer var in contents of #timer--></p></div>
+                <div id="moves-div"><p><b>Number of Moves: </b></p><p id="moves">placeholder<!--put moves var in contents of #moves--></p></div>
             </div>
         </main>
     </body>
