@@ -12,22 +12,24 @@
         </header>
         <main>
         <!--this leaderboard should be replaced with one that loads dynamically-->
-        <table id="leaderboard">
-            <tr>
-                <th>Name</th>
-                <th>Mode</th>
-                <th># Moves</th>
-                <th>Completion Time</th>
-                <th>Timestamp</th>
-            </tr>
-            <tr> <!--will be filled with info from database-->
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+        <div id="board-center">
+            <table id="leaderboard">
+                <tr>
+                    <th>Name</th>
+                    <th>Mode</th>
+                    <th># Moves</th>
+                    <th>Completion Time</th>
+                    <th>Timestamp</th>
+                </tr>
+                <tr> <!--will be filled with info from database-->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
         </main>
     </body>
 </html>
