@@ -8,6 +8,7 @@
     <body>
         <header>
             <h1>Fifteen</h1>
+            <button onClick="location.href='leaderboard.php';">View Leaderboard</button>
         </header>
         <main>
             <form id="name-form" method="post">
