@@ -1,3 +1,6 @@
+<?php
+include_once "db_api.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
