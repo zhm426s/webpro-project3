@@ -1,5 +1,15 @@
 <?php
 include_once "db_api.php";
+
+// get the id for this user and end game
+session_start();
+$id = -1;
+if (isset($_SESSION['this_game'])){
+    $id = $_SESSION['this_game'];
+    unset($_SESSION['this_game']);
+}
+// TODO get game info from table, output for leaderboard
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

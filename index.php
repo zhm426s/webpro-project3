@@ -1,5 +1,17 @@
 <?php
 include_once "db_api.php";
+
+// get name and start session
+session_start();
+if (isset($_POST['name']) && $_POST['name'] !== ''){
+    $name = htmlspecialchars($_POST['name']);
+    $id = insert_user($name);
+    $_SESSION['this_game'] = $id;
+}
+
+// TODO: any PHP connections to javascript involving moves, mode, and timing
+
+// TODO in a separate file: game logic, including how game ends
 ?>
 <!DOCTYPE html>
 <html lang="en">

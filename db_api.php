@@ -8,9 +8,11 @@ require_once "db_userpass.php";
     "<?php
 
     $user = ""; // add your GSU username
-    $pass = ""; // add your sql password (should be the same as username)"
+    $pass = ""; // add your sql password (should be the same as username)
+    
+    "
 
-    this file is added to the .gitignore file and will not be posted
+    this file is added to the .gitignore file and will not be committed
     this way passwords are protected from github
     still upload this file to codd
 */
