@@ -9,6 +9,7 @@ require_once "db_userpass.php";
 
     $user = ""; // add your GSU username
     $pass = ""; // add your sql password (should be the same as username)
+    $db = ""; // add your database name (should be same as username)
     
     "
 
@@ -19,15 +20,10 @@ require_once "db_userpass.php";
 
 // create connection
 $server = "localhost";
-$conn = new mysqli($server, $user, $pass);
+$conn = new mysqli($server, $user, $pass, $db);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-// create and initialize database
-$sql = "CREATE DATABASE IF NOT EXISTS pw2";
-
-$conn->query($sql);
 
 $sql = "CREATE TABLE IF NOT EXISTS scores (
         id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -37,7 +33,7 @@ $sql = "CREATE TABLE IF NOT EXISTS scores (
         complete_time TIME,
         this_time TIMESTAMP
         )";
-$conn->query($sql)
+$conn->query($sql);
 
 // api: functions for interacting with the database
 
