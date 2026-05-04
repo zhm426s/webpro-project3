@@ -117,6 +117,12 @@ label {
     font-size: 12pt;
 }
 
+.board-piece > p {
+    background-color: var(--accent-color-1);
+    width: fit-content;
+    padding: 0 4px;
+}
+
 #timer-div, #moves-div {
     margin: 0.2em;
 }
@@ -131,4 +137,231 @@ th, td {
     padding: 0.5em;
     margin: 0.2em;
     border: 2px solid var(--accent-color-3);
+}
+
+#p1.bloom {
+    background-image: url("images/spring1.jpg");
+    background-size: 100%;
+}
+
+#p2.bloom {
+    background-image: url("images/spring2.jpg");
+    background-size: 100%;
+}
+
+#p3.bloom {
+    background-image: url("images/spring3.jpg");
+    background-size: 100%;
+}
+
+#p4.bloom {
+    background-image: url("images/spring4.jpg");
+    background-size: 100%;
+}
+
+#p5.bloom {
+    background-image: url("images/spring5.jpg");
+    background-size: 100%;
+}
+
+#p6.bloom {
+    background-image: url("images/spring6.jpg");
+    background-size: 100%;
+}
+
+#p7.bloom {
+    background-image: url("images/spring7.jpg");
+    background-size: 100%;
+}
+
+#p8.bloom {
+    background-image: url("images/spring8.jpg");
+    background-size: 100%;
+}
+
+#p9.bloom {
+    background-image: url("images/spring9.jpg");
+    background-size: 100%;
+}
+
+#p10.bloom {
+    background-image: url("images/spring10.jpg");
+    background-size: 100%;
+}
+
+#p11.bloom {
+    background-image: url("images/spring11.jpg");
+    background-size: 100%;
+}
+
+#p12.bloom {
+    background-image: url("images/spring12.jpg");
+    background-size: 100%;
+}
+
+#p13.bloom {
+    background-image: url("images/spring13.jpg");
+    background-size: 100%;
+}
+
+#p14.bloom {
+    background-image: url("images/spring14.jpg");
+    background-size: 100%;
+}
+
+#p15.bloom {
+    background-image: url("images/spring15.jpg");
+    background-size: 100%;
+}
+
+
+
+#p1.breeze {
+    background-image: url("images/breeze1.jpg");
+    background-size: 100%;
+}
+
+#p2.breeze {
+    background-image: url("images/breeze2.jpg");
+    background-size: 100%;
+}
+
+#p3.breeze {
+    background-image: url("images/breeze3.jpg");
+    background-size: 100%;
+}
+
+#p4.breeze {
+    background-image: url("images/breeze4.jpg");
+    background-size: 100%;
+}
+
+#p5.breeze {
+    background-image: url("images/breeze5.jpg");
+    background-size: 100%;
+}
+
+#p6.breeze {
+    background-image: url("images/breeze6.jpg");
+    background-size: 100%;
+}
+
+#p7.breeze {
+    background-image: url("images/breeze7.jpg");
+    background-size: 100%;
+}
+
+#p8.breeze {
+    background-image: url("images/breeze8.jpg");
+    background-size: 100%;
+}
+
+#p9.breeze {
+    background-image: url("images/breeze9.jpg");
+    background-size: 100%;
+}
+
+#p10.breeze {
+    background-image: url("images/breeze10.jpg");
+    background-size: 100%;
+}
+
+#p11.breeze {
+    background-image: url("images/breeze11.jpg");
+    background-size: 100%;
+}
+
+#p12.breeze {
+    background-image: url("images/breeze12.jpg");
+    background-size: 100%;
+}
+
+#p13.breeze {
+    background-image: url("images/breeze13.jpg");
+    background-size: 100%;
+}
+
+#p14.breeze {
+    background-image: url("images/breeze14.jpg");
+    background-size: 100%;
+}
+
+#p15.breeze {
+    background-image: url("images/breeze15.jpg");
+    background-size: 100%;
+}
+
+#p1.sun {
+    background-image: url("images/sun1.jpg");
+    background-size: 100%;
+}
+
+#p2.sun {
+    background-image: url("images/sun2.jpg");
+    background-size: 100%;
+}
+
+#p3.sun {
+    background-image: url("images/sun3.jpg");
+    background-size: 100%;
+}
+
+#p4.sun {
+    background-image: url("images/sun4.jpg");
+    background-size: 100%;
+}
+
+#p5.sun {
+    background-image: url("images/sun5.jpg");
+    background-size: 100%;
+}
+
+#p6.sun {
+    background-image: url("images/sun6.jpg");
+    background-size: 100%;
+}
+
+#p7.sun {
+    background-image: url("images/sun7.jpg");
+    background-size: 100%;
+}
+
+#p8.sun {
+    background-image: url("images/sun8.jpg");
+    background-size: 100%;
+}
+
+#p9.sun {
+    background-image: url("images/sun9.jpg");
+    background-size: 100%;
+}
+
+#p10.sun {
+    background-image: url("images/sun10.jpg");
+    background-size: 100%;
+}
+
+#p11.sun {
+    background-image: url("images/sun11.jpg");
+    background-size: 100%;
+}
+
+#p12.sun {
+    background-image: url("images/sun12.jpg");
+    background-size: 100%;
+}
+
+#p13.sun {
+    background-image: url("images/sun13.jpg");
+    background-size: 100%;
+}
+
+#p14.sun {
+    background-image: url("images/sun14.jpg");
+    background-size: 100%;
+}
+
+#p15.sun {
+    background-image: url("images/sun15.jpg");
+    background-size: 100%;
 }
