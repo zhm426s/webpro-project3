@@ -2,8 +2,8 @@
 
 
 $host = "localhost";
-$user = "root";
-$pass = "";
+$user = "aguragai1";
+$pass = "aguragai1";
 $db   = "fifteen_puzzle";
 
 $conn = new mysqli($host, $user, $pass, $db);
