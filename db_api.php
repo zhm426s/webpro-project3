@@ -1,7 +1,7 @@
 <?php
 
 
-$host = "codd.cs.gsu.edu";
+$host = "aguragai1";
 $user = "aguragai1";
 $pass = "";
 $db   = "fifteen_puzzle";
