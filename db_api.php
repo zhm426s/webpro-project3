@@ -4,7 +4,7 @@
 $host = "localhost";
 $user = "aguragai1";
 $pass = "aguragai1";
-$db   = "fifteen_puzzle";
+$db   = "aguragai1";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
