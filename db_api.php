@@ -1,9 +1,9 @@
 <?php
 
 
-$host = "localhost";
+$host = "codd.cs.gsu.edu";
 $user = "aguragai1";
-$pass = "aguragai1";
+$pass = "";
 $db   = "fifteen_puzzle";
 
 $conn = new mysqli($host, $user, $pass, $db);
