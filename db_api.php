@@ -3,7 +3,7 @@
 
 $host = "aguragai1";
 $user = "aguragai1";
-$pass = "";
+$pass = "aguragai1";
 $db   = "fifteen_puzzle";
 
 $conn = new mysqli($host, $user, $pass, $db);
