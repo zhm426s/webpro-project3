@@ -1,10 +1,11 @@
 <?php
 
+include_once "db_userpass.php";
 
 $host = "localhost";
-$user = "aguragai1";
-$pass = "aguragai1";
-$db   = "aguragai1";
+$user = $db_user;
+$pass = $db_pass;
+$db   = $db_name;
 
 $conn = new mysqli($host, $user, $pass, $db);
 
