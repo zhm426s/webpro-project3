@@ -1,87 +1,75 @@
 <?php
-// include this file in all other php files
 
-require_once "db_userpass.php";
-/* for $user and $pass variables:
-    make a file called db_userpass.php and have these be the contents:
 
-    "<?php
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "fifteen_puzzle";
 
-    $user = ""; // add your GSU username
-    $pass = ""; // add your sql password (should be the same as username)
-    
-    "
+$conn = new mysqli($host, $user, $pass, $db);
 
-    this file is added to the .gitignore file and will not be committed
-    this way passwords are protected from github
-    still upload this file to codd
-*/
-
-// create connection
-$server = "localhost";
-$conn = new mysqli($server, $user, $pass);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// create and initialize database
-$sql = "CREATE DATABASE IF NOT EXISTS pw2";
+/*
+|--------------------------------------------------------------------------
+| INSERT USER
+|--------------------------------------------------------------------------
+*/
+function insert_user($name)
+{
+    global $conn;
 
-$conn->query($sql);
+    $stmt = $conn->prepare("INSERT INTO users (name) VALUES (?)");
+    $stmt->bind_param("s", $name);
+    $stmt->execute();
 
-$sql = "CREATE TABLE IF NOT EXISTS scores (
-        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        username VARCHAR(30) NOT NULL,
-        mode VARCHAR(10),
-        moves INT,
-        complete_time TIME,
-        this_time TIMESTAMP
-        )";
-$conn->query($sql)
-
-// api: functions for interacting with the database
-
-// insert_user: takes an inputted name and inserts a new entry into the database
-// returns: new id
-// when to use: index.php: a user inputs their name to start a game (create a session for that user with their id as a variable, end session if game is won)
-function insert_user($name) {
-    $conn = $GLOBALS['conn'];
-
-    $sql = "INSERT INTO scores (username) VALUES (?)";
-    if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("s", $name);
-        $stmt->execute();
-        return $conn->insert_id;
-    }
-    else {
-        return -1; // if value is -1, use error handling
-    }
+    return $stmt->insert_id;
 }
 
-// update_user: takes an id from a session variable to update their mode, moves, etc.
-// Parameters: 
-// $col_to_update: the name of the column that will be updated ("mode", "moves", "complete_time", or "this_time")
-// $new_value: the new value of the column to update
-// when to use: index.php: mode is posted, moves is updated, or the game ends (and completion time/timestamp (this_time) is recorded)
-function update_user($id, $col_to_update, $new_value) {
-    $sql = "UPDATE scores SET ?=? WHERE id=?";
-    if($stmt = $conn->prepare($sql)) {
-        if ($col_to_update === "moves"){
-            $stmt->bind_param("sii", $col_to_update, $new_value, $id);
-        } else {
-            $stmt->bind_param("ssi", $col_to_update, $new_value, $id);
-        }
+/*
+|--------------------------------------------------------------------------
+| SAVE SCORE
+|--------------------------------------------------------------------------
+*/
+function save_score($user_id, $mode, $moves, $time)
+{
+    global $conn;
 
-        $stmt->execute();
+    $stmt = $conn->prepare("
+        INSERT INTO scores (user_id, mode, moves, time)
+        VALUES (?, ?, ?, ?)
+    ");
+
+    $stmt->bind_param("isii", $user_id, $mode, $moves, $time);
+    $stmt->execute();
+}
+
+/*
+|--------------------------------------------------------------------------
+| GET SCORES (LEADERBOARD)
+|--------------------------------------------------------------------------
+*/
+function get_scores()
+{
+    global $conn;
+
+    $sql = "
+        SELECT u.name, s.mode, s.moves, s.time, s.created_at
+        FROM scores s
+        JOIN users u ON s.user_id = u.id
+        ORDER BY s.moves ASC, s.time ASC
+        LIMIT 20
+    ";
+
+    $result = $conn->query($sql);
+
+    $scores = [];
+
+    while ($row = $result->fetch_assoc()) {
+        $scores[] = $row;
     }
-}
 
-// select_users: select list of all users' scores, ordered by least number of moves
-// returns: result (must be iterated through in a while loop to get associative array of each row)
-// when to use: generating leaderboard (each row of result is a row in the table)
-function select_users() {
-    $sql = "SELECT * FROM scores ORDER BY moves";
-    return $conn->query($sql);
+    return $scores;
 }
-
-// there is no need for deleting score entries
